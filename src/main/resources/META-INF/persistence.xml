@@ -1,0 +1,20 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="default" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>datasource</jta-data-source>
+        
+        <properties>
+            <property name="hibernate.transaction.jta.platform"
+                      value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/espdb"/>
+            <property name="javax.persistence.jdbc.user" value="espuser"/>
+            <property name="javax.persistence.jdbc.password" value="espuserpass"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.enable_lazy_load_no_trans" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
